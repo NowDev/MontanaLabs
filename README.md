@@ -2,7 +2,7 @@
 
 ## MontanaLab's Repository - Project for ROM Tweaking
 
-![](https://github.com/NowDev/MontanaLabs/blob/master/Resources/Home.png)
+![Home](https://github.com/NowDev/MontanaLabs/blob/master/Resources/Home.png)
 
 Introducing front-end API that interact with Magisk and Android Terminal with easier scripts and graphical interface.
 
