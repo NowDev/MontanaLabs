@@ -143,9 +143,9 @@ public class Bot extends TelegramLongPollingBot {
 					return;
 				}
 
-				if (msg.startsWith("/hello")) {
-					SendMsg(message, "Hello World! kek");
-				}
+				if (msg.contains("hello world")){
+             ReplyMsg(message, "Hello!" );
+          }
 
 				if (msg.equals("/roms") || msg.equals("/roms@montanahelper_bot")) {
 					String username = message.getFrom().getFirstName();
