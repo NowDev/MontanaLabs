@@ -1,0 +1,22 @@
+AICP 9.0 03-07-19
+
+⚡️ Build: UNOFFICIAL
+
+Changelog:
+
+- Ability to change the device host-name for WiFi connections
+- Ability to force the screen & vibrate to turn on or stay off on connection to a charger
+- Access to the built-in AOSP SystemUI tuner
+- ADB over network option including custom Quick-settings tile
+- Adjust number of notifications on Lock-screen
+- Adjust volume dialog timeout
+- Adjustable actions for hardware buttons (including "kill app")
+- Adjustable Clear all recents button
+- Advanced call log in AOSP dialer app
+- Advanced power menu with more options (recovery/bootloader/SystemUI, etc.)
+- Aicp Extras app for customizations
+
+Download:
+https://drive.google.com/open?id=1MUbAVJ2cNVhMhdih6f9fpmQhQpD7A8xu
+
+By @lodovisk

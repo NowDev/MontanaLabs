@@ -1,0 +1,27 @@
+AEX 6.6 UPDATED MONTANA
+
+⚡️ Build: UNOFFICIAL
+
+Changelog:
+
+- Update all translations
+- Update APN configs
+- Update Boostframework
+- Update our launcher with Quick Space
+- Add Sysserv support for Substratum theme engine
+- Add Pixel Navigation bar animation
+- Add Live Display
+- Add Android Q’s seek bar to media notification
+- Add Android Q’s status bar battery icon
+- Add Battery animation in settings
+- Add a new Elegant UI theme
+- Fix battery icon shortcut
+- Fix some theme issues
+- Fix AOSP WFD (Miracast) support
+- Fix audio server crashes again
+- Bug fixes and performance improvements
+
+Download: 
+https://drive.google.com/open?id=1TUjZdfQ8fRxDxli5qtMdr-rOE61lragc
+
+By @lodovisk

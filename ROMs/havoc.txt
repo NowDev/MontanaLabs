@@ -1,0 +1,18 @@
+Havoc 2.6 for Moto G5S (Montana)
+
+⚡️ Build: OFFICIAL
+
+Changelog:
+- ROM Source Update
+(View full changelog here: https://t.me/Havoc_OS/1152)
+- June Security Patch
+- Updated MotoActions
+- Updated Gcam
+- Fix perms for atfwd
+- Fix black screen bug
+- Some more fixes/improvements
+
+Download:
+https://sourceforge.net/projects/havoc-os/files/montana/Havoc-OS-v2.6-20190620-montana-Official.zip/download
+
+by: @JohnLaff
