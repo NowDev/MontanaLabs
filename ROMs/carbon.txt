@@ -1,19 +1,18 @@
-CarbonROM 7.0 Opal Update!
+CarbonROM 7.0 Opal
 
 ⚡️ Build: UNOFICIAL
-- Needs testing.
 - July 3rd, 2019
 
 Changelog:
 
-� July security patch.
-� Increased in-call volume.
-� Increased WiFi speed (enabled 2.4GHz channel bonding)
-� Updated some configs.
-� Updated some overlays.
-� Reduced minimum brightness.
-� Enforced Oreo bootloader.
-� All other LineageOS 16 changes
+- July security patch.
+- Increased in-call volume.
+- Increased WiFi speed (enabled 2.4GHz channel bonding)
+- Updated some configs.
+- Updated some overlays.
+- Reduced minimum brightness.
+- Enforced Oreo bootloader.
+- All other LineageOS 16 changes
 
 Download:
 https://drive.google.com/file/d/1CCYDcdNQycXOlu-yyPVAhOJK_yp-l0wX
