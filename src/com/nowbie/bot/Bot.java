@@ -155,8 +155,7 @@ public class Bot extends TelegramLongPollingBot {
 				}
 				if (msg.startsWith("/source")) {
 					ReplyMsg(message, "💻 BOT SourceCode:\nhttps://github.com/NowDev/MontanaLabs"
-							+ "\nIf you're a maintainer and want your rom on the list"
-							+ "\nDo a Pull Request on our repo!");
+							+ "\nIf you're a maintainer and want your rom on the list, do a Pull Request on our repo!");
 				}
 				
 				
