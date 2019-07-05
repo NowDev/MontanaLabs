@@ -1,10 +1,11 @@
-Havoc 2.6 for Moto G5S (Montana)
-
-⚡️ Build: OFFICIAL
-
+Havoc 2.6
+Build: OFFICIAL
 Changelog:
-- ROM Source Update
-(View full changelog here: https://t.me/Havoc_OS/1152)
+- Added a toggle for charging animation
+- Added Battery temp in battery usage
+- Fixed analog clocks not refreshing in AOD
+- Improved Android Q clock related stuff
+- Some more fixes/improvements
 - June Security Patch
 - Updated MotoActions
 - Updated Gcam
