@@ -169,10 +169,10 @@ public class Bot extends TelegramLongPollingBot {
 				if (msg.equals("/roms") || msg.equals("/roms@montanahelper_bot")) {
 					if(!message.isUserMessage()) {
 					String username = message.getFrom().getFirstName();
-					ReplyMsg(message, "ROMs registered:"
+					ReplyMsg(message, "ROMs registered:\n"
 					+ "\n- " + "Android Ice Cold"
 					+ "\n- " + "AospExtended"
-					+ "\n- " + "BootLeggers"
+					+ "\n- " + "Bootleggers"
 					+ "\n- " + "Carbon"
 					+ "\n- " + "HavocOS"
 					+ "\n- " + "Potato OpenSauce"
@@ -183,7 +183,7 @@ public class Bot extends TelegramLongPollingBot {
 						SendMsg(message, "ROMs registered:"
 						+ "\n" + "Android Ice Cold: /aicp"
 						+ "\n" + "AospExtended: /aex"
-						+ "\n" + "BootLeggers: /bootleggers"
+						+ "\n" + "Bootleggers: /bootleggers"
 						+ "\n" + "Carbon: /carbon"
 						+ "\n" + "HavocOS: /havoc"
 						+ "\n" + "Potato OpenSauce: /posp");
