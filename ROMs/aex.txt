@@ -1,7 +1,5 @@
-AEX 6.6 UPDATED MONTANA
-
-⚡️ Build: UNOFFICIAL
-
+AEX 6.6
+Build: UNOFFICIAL
 Changelog:
 
 - Update all translations
