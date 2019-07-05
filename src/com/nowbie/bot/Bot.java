@@ -37,7 +37,7 @@ public class Bot extends TelegramLongPollingBot {
 	
 	@Override
 	/*
-	/ Se quiser um token, fale com o bot father (pai dos bots).
+	/ Se quiser um token, fale com o bot father (https://t.me/BotFather)
 	/ Simplesmente coloque: return "SEU_BOT_TOKEN";
 	/ Nesse meu caso, fiz uma classe para retornar meu token, assim consigo ignorar
 	/ a classe com o token e não deixar ser mandado para o github.
@@ -153,7 +153,16 @@ public class Bot extends TelegramLongPollingBot {
 				if (msg.startsWith("/hello")) {
 					SendMsg(message, "Hello World! kek");
 				}
-
+				
+				
+				
+				
+				/*
+				 * ROM LIST!
+				 * Yeah, a bit hardcoded but sadly that was the best i could do :(
+				 */
+				
+				//START
 				if (msg.equals("/roms") || msg.equals("/roms@montanahelper_bot")) {
 					if(!message.isUserMessage()) {
 					String username = message.getFrom().getFirstName();
@@ -161,29 +170,83 @@ public class Bot extends TelegramLongPollingBot {
 					}
 					else {
 						SendMsg(message, "ROMs registered:"
-								+ "\n" + "CarbonROM: /carbon");
+						+ "\n" + "Android Ice Cold: /aicp"
+						+ "\n" + "AospExtended: /aex"
+						+ "\n" + "BootLeggers: /bootleggers"
+						+ "\n" + "Carbon: /carbon"
+						+ "\n" + "HavocOS: /havoc"
+						+ "\n" + "Potato OpenSauce: /posp");
 					}
 				}
 				
-				if (msg.equals("/carbon")) {
-					
+				if (msg.equals("/aicp")) {
 					String username = message.getFrom().getFirstName();
-					if(!message.isUserMessage()) {
-						ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");
-					}
+					if(!message.isUserMessage()) {ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");}
+					else {
+						String ROMToGet = "aicp";
+						try {ReadURL(ROMToGet, message);} 
+						catch (MalformedURLException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[MalformedURLException]\n" + e );} 
+						catch (IOException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[IOException]\n" + e );}}}
+				if (msg.equals("/aex")) {
+					String username = message.getFrom().getFirstName();
+					if(!message.isUserMessage()) {ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");}
+					else {
+						String ROMToGet = "aex";
+						try {ReadURL(ROMToGet, message);} 
+						catch (MalformedURLException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[MalformedURLException]\n" + e );} 
+						catch (IOException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[IOException]\n" + e );}}}
+				if (msg.equals("/bootleggers")) {
+					String username = message.getFrom().getFirstName();
+					if(!message.isUserMessage()) {ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");}
+					else {
+						String ROMToGet = "bootleggers";
+						try {ReadURL(ROMToGet, message);} 
+						catch (MalformedURLException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[MalformedURLException]\n" + e );} 
+						catch (IOException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[IOException]\n" + e );}}}
+				if (msg.equals("/carbon")) {
+					String username = message.getFrom().getFirstName();
+					if(!message.isUserMessage()) {ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");}
 					else {
 						String ROMToGet = "carbon";
-						try {
-							ReadURL(ROMToGet, message);
-						} catch (MalformedURLException e) {
-							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[MalformedURLException]\n" + e );
-					
-						} catch (IOException e) {
-							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[IOException]\n" + e );
-						}
-					}
-				    
-				}
+						try {ReadURL(ROMToGet, message);} 
+						catch (MalformedURLException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[MalformedURLException]\n" + e );} 
+						catch (IOException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[IOException]\n" + e );}}}
+				if (msg.equals("/havoc")) {
+					String username = message.getFrom().getFirstName();
+					if(!message.isUserMessage()) {ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");}
+					else {
+						String ROMToGet = "havoc";
+						try {ReadURL(ROMToGet, message);} 
+						catch (MalformedURLException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[MalformedURLException]\n" + e );} 
+						catch (IOException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[IOException]\n" + e );}}}
+				if (msg.equals("/posp")) {
+					String username = message.getFrom().getFirstName();
+					if(!message.isUserMessage()) {ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");}
+					else {
+						String ROMToGet = "posp";
+						try {ReadURL(ROMToGet, message);} 
+						catch (MalformedURLException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[MalformedURLException]\n" + e );} 
+						catch (IOException e) {
+							ReplyMsg(message, "Oops! i got some error :(\nPlease report to @nowbie\nInfos:\n[IOException]\n" + e );}}}
+				
+				
+				//END
+				
+				
+				
+				
+				
 				
 				else if (msg.equals("/magisk")) {
 					ReplyMsg(message, "Magisk v19.0\n\nZIP: /magiskzip\nAPK: /magiskapk\nUninstaller: /magiskun");
@@ -260,9 +323,12 @@ public class Bot extends TelegramLongPollingBot {
 
 	public void ReadURL(String ROMToGet, Message message) throws MalformedURLException, IOException {
 		String romtosend = "404.txt";
-		if(ROMToGet == "carbon") {
-		  romtosend = "carbon.txt";
-		}
+		if(ROMToGet == "aex") {romtosend = "aex.txt";}
+		if(ROMToGet == "aicp") {romtosend = "aicp.txt";}
+		if(ROMToGet == "bootleggers") {romtosend = "bootleggers.txt";}
+		if(ROMToGet == "carbon") {romtosend = "carbon.txt";}
+		if(ROMToGet == "havoc") {romtosend = "havoc.txt";}
+		if(ROMToGet == "posp") {romtosend = "posp.txt";}
 
 		URLConnection connection =  new URL("https://raw.githubusercontent.com/NowDev/MontanaLabs/master/ROMs/" + romtosend ).openConnection();
 		   String content = null;
