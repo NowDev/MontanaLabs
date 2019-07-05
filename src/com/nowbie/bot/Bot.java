@@ -29,6 +29,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @SuppressWarnings("unused")
+
 public class Bot extends TelegramLongPollingBot {	
 
 	@Override
@@ -37,7 +38,7 @@ public class Bot extends TelegramLongPollingBot {
 	@Override
 	//Não posso passar o token para o git haha
 	//Se quiser um token, fale com o bot father (pai dos bots).
-	public String getBotToken() { return ""; }
+	public String getBotToken() { return BotInfo.BotToken; }
 	
 	@Override
 	//esta função é acionada toda vez que o bot recebe uma nova mensagem
