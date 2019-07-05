@@ -119,7 +119,7 @@ public class Bot extends TelegramLongPollingBot {
 				if (msg.equals("/start")) {
 					if ( message.isUserMessage() == false ) {ReplyMsg(message, "hmmmm, contact me on private for that :3");}
 					else {
-						SendMsg(message, "Hey, welcome to MontanaHelper! 🤖\nfor now i have only:\n> /roms\n> /help\n> /magisk \n[this bot was created 2 days ago, so... it's in-dev!]");
+						SendMsg(message, "Hey, welcome to MontanaHelper! 🤖\nfor now i have only:\n> /roms\n> /help\n> /magisk\n> /source");
 					}
 				}
 		
@@ -150,10 +150,15 @@ public class Bot extends TelegramLongPollingBot {
 					return;
 				}
 
-				if (msg.startsWith("/hello")) {
-					SendMsg(message, "Hello World! kek");
+				if (msg.startsWith("/ping")) {
+					SendMsg(message, "Pong! 👾");
 				}
-				
+				if (msg.startsWith("/source")) {
+					ReplyMsg(message, "💻 BOT SourceCode:\nhttps://github.com/NowDev/MontanaLabs"
+							+ "\nIf you're a maintainer and want your rom on the list"
+							+ "\nDo a Pull Request on our repo!");
+				}
+				💻
 				
 				
 				
@@ -166,7 +171,15 @@ public class Bot extends TelegramLongPollingBot {
 				if (msg.equals("/roms") || msg.equals("/roms@montanahelper_bot")) {
 					if(!message.isUserMessage()) {
 					String username = message.getFrom().getFirstName();
-						ReplyMsg(message, "Hello, " + username + "! Contact me on private for that!\n@montanahelper_bot");
+					ReplyMsg(message, "ROMs registered:"
+					+ "\n- " + "Android Ice Cold"
+					+ "\n- " + "AospExtended"
+					+ "\n- " + "BootLeggers"
+					+ "\n- " + "Carbon"
+					+ "\n- " + "HavocOS"
+					+ "\n- " + "Potato OpenSauce"
+					+ "\n\n" + "For downloads and changelogs, talk with me on private!"
+					+ "\n@montanahelper_bot");
 					}
 					else {
 						SendMsg(message, "ROMs registered:"
