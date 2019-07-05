@@ -36,13 +36,19 @@ public class Bot extends TelegramLongPollingBot {
 	public String getBotUsername() { return "@montanahelper_bot"; }
 	
 	@Override
-	//Não posso passar o token para o git haha
-	//Se quiser um token, fale com o bot father (pai dos bots).
+	/*
+	/ Se quiser um token, fale com o bot father (pai dos bots).
+	/ Simplesmente coloque: return "SEU_BOT_TOKEN";
+	/ Nesse meu caso, fiz uma classe para retornar meu token, assim consigo ignorar
+	/ a classe com o token e não deixar ser mandado para o github.
+	*/
 	public String getBotToken() { return BotInfo.BotToken; }
 	
 	@Override
-	//esta função é acionada toda vez que o bot recebe uma nova mensagem
-	//mais infos aqui: [https://core.telegram.org/bots/api#update ]
+	/*
+	/ esta função é acionada toda vez que o bot recebe uma nova mensagem
+	/ mais infos aqui: [https://core.telegram.org/bots/api#update ]
+	*/
 	public void onUpdateReceived(Update update) {
 	    
 		
