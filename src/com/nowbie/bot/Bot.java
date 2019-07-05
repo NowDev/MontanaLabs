@@ -158,7 +158,6 @@ public class Bot extends TelegramLongPollingBot {
 							+ "\nIf you're a maintainer and want your rom on the list"
 							+ "\nDo a Pull Request on our repo!");
 				}
-				💻
 				
 				
 				
