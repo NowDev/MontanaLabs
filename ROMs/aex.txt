@@ -1,7 +1,5 @@
-AEX 6.6 UPDATED MONTANA
-
-⚡️ Build: UNOFFICIAL
-
+AEX 6.6
+Build: UNOFFICIAL
 Changelog:
 
 - Update all translations
@@ -11,8 +9,8 @@ Changelog:
 - Add Sysserv support for Substratum theme engine
 - Add Pixel Navigation bar animation
 - Add Live Display
-- Add Android Q’s seek bar to media notification
-- Add Android Q’s status bar battery icon
+- Add Android Q seek bar to media notification
+- Add Android Q status bar battery icon
 - Add Battery animation in settings
 - Add a new Elegant UI theme
 - Fix battery icon shortcut

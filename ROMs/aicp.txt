@@ -1,7 +1,6 @@
-AICP 9.0 03-07-19
-
-⚡️ Build: UNOFFICIAL
-
+AICP 9.0
+Build: UNOFFICIAL
+Date: 03-07-19
 Changelog:
 
 - Ability to change the device host-name for WiFi connections

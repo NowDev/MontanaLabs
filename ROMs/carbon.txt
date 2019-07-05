@@ -1,8 +1,6 @@
 CarbonROM 7.0 Opal
-
-⚡️ Build: UNOFICIAL
-- July 3rd, 2019
-
+DATE: July 3rd, 2019
+Build: UNOFICIAL
 Changelog:
 
 - July security patch.

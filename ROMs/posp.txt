@@ -1,19 +1,18 @@
 Potato Open Sauce Project!
-
-⚡️ Build: UNOFFICIAL
+Build: UNOFFICIAL
 Date: 03/07/2019.
 
 Device Changelog:
-• add spectrum on rootdir.
-• disable memory killer.
-• rootdir: use all cores for camera deamon.
-• enable touch optimization.
-• correct frequency of GPU on rootdir
-• setupmakefiles: lineage >> aosp
-• remove conflicts on MotoActions
-• pre-opt systemUI
-
-by: @alexxcruz
+- add spectrum on rootdir.
+- disable memory killer.
+- rootdir: use all cores for camera deamon.
+- enable touch optimization.
+- correct frequency of GPU on rootdir
+- setupmakefiles: lineage >> aosp
+- remove conflicts on MotoActions
+- pre-opt systemUI
 
 Download:
 https://drive.google.com/file/d/10dTIs_y0wFXFrlzNvuMOVwTc2tYvTk0H
+
+by: @alexxcruz
