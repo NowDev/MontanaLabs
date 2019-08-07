@@ -21,7 +21,7 @@ public class Main {
 			System.out.println("[=======================================]");
 			System.out.println("[         MontanaHelper is Online!      ]");
 			System.out.println("[             by t.me/nowbie            ]");
-			System.out.println("[                 V1.0.0                ]");
+			System.out.println("[                 V1.5.1                ]");
 			System.out.println("[=======================================]\n");
 		} 
 		catch (TelegramApiException e) {

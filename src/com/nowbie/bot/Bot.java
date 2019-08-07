@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import static java.lang.Math.toIntExact;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendDocument;
@@ -51,8 +52,64 @@ public class Bot extends TelegramLongPollingBot {
 	*/
 	public void onUpdateReceived(Update update) {
 	    
+        // We check if the update has a message and the message has text
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            String message_text = update.getMessage().getText();
+            String chat_id = update.getMessage().getChatId().toString();
+            int msg_id = update.getMessage().getMessageId();
+            if (update.getMessage().getText().equals("/btn")) {
+
+
+            	//Button stuff
+                SendMessage replymsg = new SendMessage()
+                        .setChatId(chat_id)
+                        .setText("Clique no Botão");
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                rowInline.add(new InlineKeyboardButton().setText("Click!").setCallbackData("btn_test"));
+                // Set the keyboard to the markup
+                rowsInline.add(rowInline);
+                // Add it to the message
+                markupInline.setKeyboard(rowsInline);
+                replymsg.setReplyMarkup(markupInline);
+                replymsg.setReplyToMessageId(msg_id);
 		
+        		//try to send
+        		try {
+        			execute(replymsg);
+        		}
+        		catch (TelegramApiException e) {
+        			e.printStackTrace();
+        		}
+        		
+            } else {
+
+            }
+
+        } else if (update.hasCallbackQuery()) {
+            // Set variables
+            String call_data = update.getCallbackQuery().getData();
+            long message_id = update.getCallbackQuery().getMessage().getMessageId();
+            int msg_id = toIntExact(message_id);
+            long chat_id = update.getCallbackQuery().getMessage().getChatId();
+
+            if (call_data.equals("btn_test")) {
+                String answer = "Worked!";
+                SendMessage btnreply = new SendMessage()
+                        .setChatId(chat_id)
+                        .setReplyToMessageId(msg_id)
+                        .setText(answer);
+                try {
+                    execute(btnreply);
+                } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+		//end
 		
+        
 		if (update.hasMessage()) {
 			Message ourmessage = update.getMessage();
 			if (ourmessage.hasDocument()) {
@@ -128,7 +185,8 @@ public class Bot extends TelegramLongPollingBot {
 					ReplyMsg(message, "Hey there! did you wanna help? for now i only have: \n> /roms - see some roms...\n> /magisk - download magisk.\ntalk with me on private:" + "\n> @montanahelper_bot" );
 					return;
 					}
-				}
+				}				
+				
 				if (msg.contains("kkkkkkkkkk")) {
 					ReplyMsg(message, "lol 😂😂😂");
 					return;
@@ -164,7 +222,7 @@ public class Bot extends TelegramLongPollingBot {
 				 * ROM LIST!
 				 * Yeah, a bit hardcoded but sadly that was the best i could do :(
 				 */
-				
+	                    
 				//START
 				if (msg.equals("/roms") || msg.equals("/roms@montanahelper_bot")) {
 					if(!message.isUserMessage()) {
