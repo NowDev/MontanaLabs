@@ -11,8 +11,10 @@ import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -64,7 +66,7 @@ public class Bot extends TelegramLongPollingBot {
 	public String getBotToken() { return BotInfo.BotToken; }
 	// O comentário anterior serve para esta linha também, coloque aqui o username do seu bot.
 	public String getBotUsername() { return BotInfo.BotUsername; }
-
+	
 	@Override
 	/*
 	/ esta função é acionada toda vez que o bot recebe uma nova mensagem
@@ -1171,61 +1173,62 @@ public class Bot extends TelegramLongPollingBot {
 				
 				//END
 				
-				
-				
-				
-				
-				
-				else if (msg.equals("/magisk")) {
-					ReplyMsg(message, true, "Magisk v19.0\n\nZIP: /magiskzip\nAPK: /magiskapk\nUninstaller: /magiskun");
-				}
-				else if (msg.equals("/magisk@montanahelper_bot")) {
-					ReplyMsg(message, true, "Magisk v19.0\n\nZIP: /magiskzip\nAPK: /magiskapk\nUninstaller: /magiskun");
-				}
-				
-				else if (msg.contains("/magiskapk")) {
+				else if (msg.contains("/magisk")) {
 					
+					String magisks = "hmmm... something is wrong, use as my example:\n```/magisk apk```\n```/magisk zip```\n```/magisk uninstaller```";
 					int fileMessageID = message.getMessageId();
-					
-					String docId = "BQADAQADjwADCtkQRmJ8_qiir8HLAg";
-					Long chatId = message.getChatId();
-					try {
-						SendFile(chatId, docId, fileMessageID );
-					} catch (TelegramApiException e) {
-						e.printStackTrace();
+					if (msg.contains("/magisk ")) {
+						String magiskmsg = msg.replace( "/magisk ", "" );
+						if (magiskmsg.equals("apk")) {
+							
+							String docId = "BQADAQADcAADVFdIRG5B0N-W3c-yFgQ";
+							Long chatId = message.getChatId();
+							try {
+								SendMsg(message, false, "Magisk APK v7.3.4:");
+								SendFile(chatId, docId, fileMessageID );
+							} catch (TelegramApiException e) {
+								e.printStackTrace();
+							}
+						}
+						else if (magiskmsg.equals("zip")) {
+							
+							String docId = "BQADAQADZgAD80FIRIf-usSD7cAmFgQ";
+							Long chatId = message.getChatId();
+							try {
+								SendMsg(message, false, "Magisk ZIP v19.4:");
+								SendFile(chatId, docId, fileMessageID );
+							} catch (TelegramApiException e) {
+								e.printStackTrace();
+							}
+						}
+						else if (magiskmsg.equals("uninstaller")) {
+							
+							String docId = "BQADAQADcQADVFdIRHNXa-FgoOvMFgQ";
+							Long chatId = message.getChatId();
+							try {
+								SendMsg(message, false, "Magisk Unistaller 20190919:");
+								SendFile(chatId, docId, fileMessageID );
+							} catch (TelegramApiException e) {
+								e.printStackTrace();
+							}
+						}
+						else {
+							ReplyMsg(message, false, "argument unknown for magisk");
+						}
+						
 					}
-				}
-				else if (msg.contains("/magiskzip")) {
 					
-					int fileMessageID = message.getMessageId();
-					
-					String docId = "BQADAQADjgADCtkQRslu2sruOQgIAg";
-					Long chatId = message.getChatId();
-					try {
-						SendFile(chatId, docId, fileMessageID );
-					} catch (TelegramApiException e) {
-						e.printStackTrace();
+					else {
+						ReplyMsg(message, true, magisks );
 					}
-					return;
+					
 				}
 				
-				else if (msg.contains("/magiskun")) {
-					
-					int fileMessageID = message.getMessageId();
-					
-					String docId = "BQADAQADTwADK9gYRsNaMt6z4Uy-Ag";
-					Long chatId = message.getChatId();
-					try {
-						SendFile(chatId, docId, fileMessageID );
-					} catch (TelegramApiException e) {
-						e.printStackTrace();
-					}
-					return;
-				}
 				
-		     }
-		  }	
-	 }
+
+		    }
+		}	
+	}
 
 	public void ReadURL(String ROMToGet, long chatID, int queryID ) throws MalformedURLException, IOException {
 		
