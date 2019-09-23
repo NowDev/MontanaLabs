@@ -970,6 +970,7 @@ public class Bot extends TelegramLongPollingBot {
 						return;
 					}
 				}
+				/*
 				if (msg.contains("kkkkkkkkkk")) {
 					SendMsg(message, false, "lol");
 					return;
@@ -983,6 +984,7 @@ public class Bot extends TelegramLongPollingBot {
 					}
 					catch(TelegramApiException e) {}
 				}
+				*/
 				if (msg.equals("/quit")) {
 					ReplyMsg(message, false, "OK...");
 					Long chat_id = message.getChatId();
