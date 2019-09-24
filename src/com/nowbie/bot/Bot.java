@@ -1171,14 +1171,16 @@ public class Bot extends TelegramLongPollingBot {
 					}
 				
 				
-				//END
 				
+				
+				//END
 				else if (msg.contains("/magisk")) {
 					
-					String magisks = "hmmm... something is wrong, use as my example:\n```/magisk apk```\n```/magisk zip```\n```/magisk uninstaller```";
+					String magisks = "``` Use this command as my example:\n/magisk apk\n/magisk zip\n/magisk uninstaller```";
 					int fileMessageID = message.getMessageId();
 					if (msg.contains("/magisk ")) {
-						String magiskmsg = msg.replace( "/magisk ", "" );
+						String magiskmsgor = msg.toString();
+						String magiskmsg = magiskmsgor.replace( "/magisk ", "" );
 						if (magiskmsg.equals("apk")) {
 							
 							String docId = "BQADAQADcAADVFdIRG5B0N-W3c-yFgQ";
@@ -1223,6 +1225,8 @@ public class Bot extends TelegramLongPollingBot {
 					}
 					
 				}
+				
+				
 				
 				
 
