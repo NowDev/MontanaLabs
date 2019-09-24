@@ -479,6 +479,31 @@ public class Bot extends TelegramLongPollingBot {
 		
 		
 		if (update.hasMessage()) {
+			if(update.getMessage().hasText()) {
+				String sendmsgtxt = update.getMessage().getText().toString();
+				Message sendmsg = update.getMessage();
+				if (sendmsgtxt.contains(".send")) {
+					
+					int fileMessageID = sendmsg.getMessageId();
+					String sendmsgcmd = sendmsgtxt.toString();
+					
+					if (sendmsgtxt.equals(".send")) {
+					ReplyMsg(sendmsg, true, "No ID given, use as my example:\n.send <file-id>");
+					}
+					if (sendmsgtxt.equals(".send ")) {
+					ReplyMsg(sendmsg, true, "No ID given, use as my example:\n.send <file-id>");
+					}
+					
+					String sendmsgor = sendmsgcmd.replace( ".send ", "" );
+					System.out.println("SEND: >"+sendmsgor+"<");
+					Long chatId = sendmsg.getChatId();
+					try {
+						SendFile(chatId, sendmsgor, fileMessageID );
+					} catch (TelegramApiException e) {
+						ReplyMsg(sendmsg, false, "error sending file." );
+					    }
+					}
+			}
 			if(update.getMessage().isSuperGroupMessage()) {
 				Integer user_id = update.getMessage().getFrom().getId();
 				String content = user_id.toString();
@@ -1174,6 +1199,7 @@ public class Bot extends TelegramLongPollingBot {
 				
 				
 				//END
+				
 				else if (msg.contains("/magisk")) {
 					
 					String magisks = "``` Use this command as my example:\n/magisk apk\n/magisk zip\n/magisk uninstaller```";
