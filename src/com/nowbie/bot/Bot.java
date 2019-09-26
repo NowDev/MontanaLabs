@@ -898,46 +898,40 @@ public class Bot extends TelegramLongPollingBot {
 					int pointint = Integer.parseInt(points);
 					String userpoints = Integer.toString(pointint);
 					point.close();
+					String ranktosend = "Hmmm... i don't know you yet.";
 					if ( pointint >= 1 ) {
-					ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-							+ "\nRank: Noob" );
-					return;
-					}
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+							+ "\nRank: Noob";
+					} 
 					if ( pointint >= 150 ) {
-						ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-								+ "\nRank: Rookie" );
-						return;
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+								+ "\nRank: Rookie";
 						}
 					if ( pointint >= 500 ) {
-						ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-								+ "\nRank: Advanced" );
-						return;
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+								+ "\nRank: Advanced";
 						}
 					if ( pointint >= 1000 ) {
-						ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-								+ "\nRank: Expert" );
-						return;
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+								+ "\nRank: Expert";
 						}
 					if ( pointint >= 1500 ) {
-						ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-								+ "\nRank: PRO" );
-						return;
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+								+ "\nRank: PRO";
 						}
 					if ( pointint >= 3000 ) {
-						ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-								+ "\nRank: Elite" );
-						return;
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+								+ "\nRank: Elite";
 						}
 					if ( pointint >= 5000 ) {
-						ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-								+ "\nRank: Master" );
-						return;
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+								+ "\nRank: Master";
 						}
 					if ( pointint >= 10000 ) {
-						ReplyMsg( message, true, "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
-								+ "\nRank: LEGEND" );
-						return;
+						ranktosend = "Hello, " + username + "!" + "\nYou have " + userpoints + " points!"
+								+ "\nRank: LEGEND";
 						}
+					ReplyMsg(message, true, ranktosend );
 					}
 					
 					catch (IOException e){}
@@ -1012,6 +1006,29 @@ public class Bot extends TelegramLongPollingBot {
 					catch(TelegramApiException e) {}
 				}
 				*/
+				if (msg.contains("/r")) {
+				String RID = message.getFrom().getId().toString();
+					if(RID.contains("686049054")){
+					String RunMsg = msg.toString();
+					String RunArg = RunMsg.replace("/r ", "");
+					System.out.println("CMD: " + RunArg );
+					String s;
+			        Process p;
+			        try {
+			            p = Runtime.getRuntime().exec(RunArg);
+			            BufferedReader br = new BufferedReader(
+			            new InputStreamReader(p.getInputStream()));
+			            while ((s = br.readLine()) != null) {
+			            	SendMsg(message, false, s);
+			            }
+			            p.waitFor();
+			            p.destroy();
+			        } catch (Exception e) {}
+					}
+					else {
+						ReplyMsg(message, true, "Refused, only ```@nowbie``` can use it.");
+					}
+				}
 				if (msg.equals("/quit")) {
 					ReplyMsg(message, false, "OK...");
 					Long chat_id = message.getChatId();
