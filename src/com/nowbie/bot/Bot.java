@@ -605,8 +605,6 @@ public class Bot extends TelegramLongPollingBot {
 				
 			}
 			*/
-			
-				
 				
 				
 				if (msg.startsWith("/menu")) {
@@ -637,6 +635,22 @@ public class Bot extends TelegramLongPollingBot {
         		}
 			}
         		
+				if (msg.startsWith("/all")) {
+					ReplyMsg(message, true, "```%F"
+							+ "\n /botsource"
+							+ "\n /help"
+							+ "\n /level"
+							+ "\n /magisk"
+							+ "\n /menu"
+							+ "\n /ping"
+							+ "\n /sh <command>"
+							+ "\n /shot"
+							+ "\n /wiki <something>"
+							+ "\n /whois <domain>"
+							+ "\n .info"
+							+ "\n .user"
+							+ "\n .send <file-id>```");
+				}
 				if (msg.startsWith("/wiki ")) {
 					if(message.isUserMessage()) {
 					
@@ -680,8 +694,9 @@ public class Bot extends TelegramLongPollingBot {
 				       JsonElement jsonExtract = new JsonParser().parse(result);
 				       JsonElement out = jsonExtract.getAsJsonObject().get("extract");
 				       String Wiki = out.toString();
-				       String WikiResult = Wiki.replace("\n"," ");
-					   SendMsg(message, false, WikiResult);
+				       String WikiResultRAW = Wiki.replaceAll("\n"," ");
+				       String WikiResult = WikiResultRAW.replaceAll("\\r\\n|\\r|\\n", " ");
+					   SendMsg(message, false, WikiResult + "\n~ thx Wiki API.");
 				       }
 				    }  
 					else {
@@ -838,7 +853,7 @@ public class Bot extends TelegramLongPollingBot {
 							+ "Example: /wiki Minecraft");
 				}
 				
-				if (msg.contains("/help")) {
+				if (msg.startsWith("/help")) {
 					if ( message.isUserMessage() == true ) {
 					
 						Long chat_id = message.getChatId();
@@ -946,16 +961,28 @@ public class Bot extends TelegramLongPollingBot {
 					if(message.isSuperGroupMessage()) {
 					
 					Random rand = new Random();
-					int n = rand.nextInt(6);
+					int n = rand.nextInt(16);
 					n += 1;
-					if(n==4) {
-						ReplyMsg(message, false, "😐  🔫 SHOT!\nSadly you are dead! (" + n + "/6)" );
+					if(n==8) {
+						ReplyMsg(message, false, "😐  🔫 SHOT!\nSadly you are dead! (" + n + "/16)" );
 						Long chat_id = message.getChatId();
 						Integer user_id = message.getFrom().getId();
 						KickUser(message, chat_id, user_id );
 						return;
 					}
-					else {
+					else if(n==15) {
+						ReplyMsg(message, false, "😐  🔫 SHOT!\nSadly you are dead! (" + n + "/16)" );
+						Long chat_id = message.getChatId();
+						Integer user_id = message.getFrom().getId();
+						KickUser(message, chat_id, user_id );
+					}
+					else if(n==2) {
+						ReplyMsg(message, false, "😐  🔫 SHOT!\nSadly you are dead! (" + n + "/16)" );
+						Long chat_id = message.getChatId();
+						Integer user_id = message.getFrom().getId();
+						KickUser(message, chat_id, user_id );
+					}
+					else { 
 						Integer user_id = update.getMessage().getFrom().getId();
 						String content = user_id.toString();
 						String currentdir = System.getProperty("user.dir");
@@ -968,7 +995,7 @@ public class Bot extends TelegramLongPollingBot {
 						Stream<String> point;
 						try {
 							Random randprize = new Random();
-							int prize = randprize.nextInt(10);
+							int prize = randprize.nextInt(30);
 							prize += 1;
 							point = Files.lines(Paths.get(currentdir));
 							String points = point.map(Object::toString).collect(Collectors.joining(","));
@@ -979,7 +1006,7 @@ public class Bot extends TelegramLongPollingBot {
 							String pointsave = Integer.toString(pointint);
 							Files.write(Paths.get(currentdir), pointsave.getBytes());
 							
-							ReplyMsg(message, true, "😐  🔫 **SHOT!**\nThe gun haven't bullet! 🙂  (" + n + "/6)\nYou got " + prize + " points for your lucky!\nSee your points with /level" );
+							ReplyMsg(message, true, "😐  🔫 **SHOT!**\nThe gun haven't bullet! 🙂  (" + n + "/16)\nYou got " + prize + " points for your luck!\nSee your points with /level" );
 						} catch (IOException e1) {}
 
 						
@@ -1006,11 +1033,11 @@ public class Bot extends TelegramLongPollingBot {
 					catch(TelegramApiException e) {}
 				}
 				*/
-				if (msg.contains("/r")) {
+				if (msg.startsWith("/sh")) {
 				String RID = message.getFrom().getId().toString();
 					if(RID.contains("686049054")){
 					String RunMsg = msg.toString();
-					String RunArg = RunMsg.replace("/r ", "");
+					String RunArg = RunMsg.replace("/sh ", "");
 					System.out.println("CMD: " + RunArg );
 					String s;
 			        Process p;
@@ -1045,22 +1072,26 @@ public class Bot extends TelegramLongPollingBot {
 					ReplyMsg(message, false,"UserBOT 😏");
 				}
 				
+				/*
 				if (msg.contains(" safad")) {
 					ReplyMsg(message, false, "hmmmmmmm rsrsrsrs 😏");
 					return;
 				}
-				/*
+				
 				if (msg.contains("ban")) {
 					ReplyMsg(message, "ban  a  na 🍌");
 					return;
 				}
 				*/
+				if (msg.startsWith("#magisk")){
+					ReplyMsg(message, false, "did you mean /magisk ?");
+				}
 				if (msg.contains(" advertência")) {
 					ReplyMsg(message, false, "admin's on fire! 🔥");
 					return;
 				}
 				if (msg.startsWith("/ping")) {
-					SendMsg(message, false, "Pong! 👾");
+					SendMsg(message, false, "Pong! 👾\nBot v" + Main.version );
 				}
 				if (msg.startsWith("/botsource")) {
 					ReplyMsg(message, false, "💻 BOT SourceCode:\nhttps://github.com/NowDev/MontanaLabs"
@@ -1217,7 +1248,7 @@ public class Bot extends TelegramLongPollingBot {
 				
 				//END
 				
-				else if (msg.contains("/magisk")) {
+				else if (msg.startsWith("/magisk")) {
 					
 					String magisks = "``` Use this command as my example:\n/magisk apk\n/magisk zip\n/magisk uninstaller```";
 					int fileMessageID = message.getMessageId();
@@ -1226,10 +1257,10 @@ public class Bot extends TelegramLongPollingBot {
 						String magiskmsg = magiskmsgor.replace( "/magisk ", "" );
 						if (magiskmsg.equals("apk")) {
 							
-							String docId = "BQADAQADcAADVFdIRG5B0N-W3c-yFgQ";
+							String docId = "BQADAQADkAADyz8pRscVxAN_97C0FgQ";
 							Long chatId = message.getChatId();
 							try {
-								SendMsg(message, false, "Magisk APK v7.3.4:");
+								SendMsg(message, false, "Magisk APK v7.4.0:");
 								SendFile(chatId, docId, fileMessageID );
 							} catch (TelegramApiException e) {
 								e.printStackTrace();
@@ -1237,10 +1268,10 @@ public class Bot extends TelegramLongPollingBot {
 						}
 						else if (magiskmsg.equals("zip")) {
 							
-							String docId = "BQADAQADZgAD80FIRIf-usSD7cAmFgQ";
+							String docId = "BQADAQADjgADyz8pRtPfTHtva9vCFgQ";
 							Long chatId = message.getChatId();
 							try {
-								SendMsg(message, false, "Magisk ZIP v19.4:");
+								SendMsg(message, false, "Magisk ZIP v20.1:");
 								SendFile(chatId, docId, fileMessageID );
 							} catch (TelegramApiException e) {
 								e.printStackTrace();
@@ -1248,10 +1279,10 @@ public class Bot extends TelegramLongPollingBot {
 						}
 						else if (magiskmsg.equals("uninstaller")) {
 							
-							String docId = "BQADAQADcQADVFdIRHNXa-FgoOvMFgQ";
+							String docId = "BQADAQADjwADyz8pRmbkv54AAen1fhYE";
 							Long chatId = message.getChatId();
 							try {
-								SendMsg(message, false, "Magisk Unistaller 20190919:");
+								SendMsg(message, false, "Magisk Uninstaller 2019/11/02:");
 								SendFile(chatId, docId, fileMessageID );
 							} catch (TelegramApiException e) {
 								e.printStackTrace();

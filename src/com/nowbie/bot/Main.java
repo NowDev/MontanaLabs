@@ -10,9 +10,12 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 //this is the Main class, which will create new instance of the bot
 public class Main {
 
+	public static String version = "1.8.3";
+	
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 
-		System.out.println("[!] Starting MontanaHelper...\n");
+		System.out.println("[!] Starting MontanaHelper...");
 		
 		//create new bot
 		ApiContextInitializer.init();
@@ -20,13 +23,23 @@ public class Main {
 		
 		//init bot (we try to create new bot, and throw exception if creation failed)
 		try {
+			
+			try {
+				CreateDir();
+			}
+			catch(Exception e) {
+				System.out.println("[?] Tried to create data folder.");
+			}
+			if(BotInfo.BotUsername == "@nowbie_bot") {
+				System.out.println("[!] Running on test mode!");
+				}
+			
 			telegramBotsApi.registerBot(new Bot());
-			System.out.println("[=======================================]");
+			System.out.println("\n[=======================================]");
 			System.out.println("[         MontanaHelper is Online!      ]");
 			System.out.println("[             by t.me/nowbie            ]");
-			System.out.println("[                 V1.8.3                ]");
+			System.out.println("[                 v"+version+"                ]");
 			System.out.println("[=======================================]\n");
-			
 			
 		} 
 		catch (TelegramApiException e) {
@@ -35,11 +48,11 @@ public class Main {
 		
 	}
 	
-    public void CreateDir(){
+    public static void CreateDir(){
     	
     	try {
         String d = getProgramPath() + "/users/";
-        System.out.println("Making userdir at " + d);
+        System.out.println("[!] Generating files...");
         File dir = new File(d); //The name of the directory to create                                                                                      
         dir.mkdir(); //Creates the directory                                                                                                               
         }

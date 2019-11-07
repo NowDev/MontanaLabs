@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_211"/>
-	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Coisas/Projects/MontanaLabs/libs/telegrambots-4.1-jar-with-dependencies.jar"/>
-	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Coisas/Projects/MontanaLabs/libs/commons-net-1.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Coisas/Projects/MontanaLabs/libs/org.json.jar"/>
-	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Coisas/Projects/MontanaLabs/libs/gson-2.8.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_221"/>
+	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Eclipse/MontanaLabs/libs/telegrambots-4.1-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Eclipse/MontanaLabs/libs/commons-net-1.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Eclipse/MontanaLabs/libs/org.json.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thefi/Desktop/Files/Eclipse/MontanaLabs/libs/gson-2.8.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
